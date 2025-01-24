@@ -12,50 +12,36 @@ class SearchController extends Controller
     private $whoisurl = 'https://dev-whois.jagoanhosting.com/api/v2/whois';
     private $whoiskey = 'UAyP7POCcVJ8Pq9Pt1v987';
 
-    public function index()
-    {
-        $data = $this->loadData();
-
-        return Inertia::render('SearchDomain', [
-            'spotlight' => $data['config']['SEARCH_DOMAIN_SPOTLIGHT'],
-            'categories' => $data['categories'],
-        ]);
-    }
-
     public function search(Request $request)
     {
         $data = $this->loadData();
         $extensions = $data['extensions'];
         $spotlightExtensions = $data['config']['SEARCH_DOMAIN_SPOTLIGHT'];
-        $page = $request->input('page', 1);
 
+        $page = $request->input('page', 1);
         $input = $request->input('keyword', '');
+        $category = $request->input('category', '');
         $inputDomainParts = explode('.', $input);
         $keyword = $inputDomainParts[0];
         $hasExtension = count($inputDomainParts) > 1;
 
         $spotlightDomain = null;
-        $suggestions = [];
 
         if ($hasExtension) {
             $domain = $input;
             $inputExtension = end($inputDomainParts);
-            $extensionExists = false;
-            foreach ($extensions as $ext) {
-                if ($ext['extension'] === $inputExtension) {
-                    $extensionExists = true;
-                    break;
-                }
-            }
+            $extensionExists = $this->getExtension($extensions, $inputExtension);
 
             if ($extensionExists) {
                 $status = $this->checkDomainStatus($domain);
                 $spotlightDomain = [
                     'domain' => $domain,
-                    'price' => null,
+                    'gimmick_price' => $extensionExists['gimmick_price'] ?? null,
+                    'price' => $extensionExists['register'] ?? null,
                     'status' => $status['meta']['success']
-                    ? ($status['data']['is_available'] ? 'available' : 'not_available')
-                    : 'error'
+                        ? ($status['data']['is_available'] ? 'available' : 'not_available')
+                        : 'error',
+                    'hasExtension' => true,
                 ];
             }
         }
@@ -63,20 +49,25 @@ class SearchController extends Controller
         if (!$spotlightDomain || $spotlightDomain['status'] === 'not_available') {
             foreach ($spotlightExtensions as $ext) {
                 $domain = $keyword . $ext;
-                $status = $this->checkDomainStatus($domain);
-                if ($status['meta']['success'] && $status['data']['is_available']) {
-                    $spotlightDomain = [
-                        'domain' => $domain,
-                        'price' => null,
-                        'status' => 'available',
-                        'desiredDomain' => $input,
-                    ];
-                    break;
+                $extensionExists = $this->getExtension($extensions, ltrim($ext, '.'));
+                if ($extensionExists) {
+                    $status = $this->checkDomainStatus($domain);
+                    if ($status['meta']['success'] && $status['data']['is_available']) {
+                        $spotlightDomain = [
+                            'domain' => $domain,
+                            'gimmick_price' => $extensionExists['gimmick_price'] ?? null,
+                            'price' => $extensionExists['register'] ?? null,
+                            'status' => 'available',
+                            'hasExtension' => $hasExtension,
+                            'desiredDomain' => $hasExtension ? $input : null,
+                        ];
+                        break;
+                    }
                 }
             }
         }
 
-        $suggestions = $this->generateDomain($keyword, $extensions, $page);
+        $suggestions = $this->generateDomain($keyword, $extensions, $page, $category);
 
         return response()->json([
             'spotlight' => $spotlightDomain,
@@ -112,6 +103,45 @@ class SearchController extends Controller
         }
     }
 
+    private function generateDomain($keyword, $extensions, $page = 1, $category = '', $perPage = 15)
+    {
+        $filteredExtensions = $category
+            ? array_filter($extensions, function ($extension) use ($category) {
+                return in_array($category, $extension['categories']);
+            })
+            : $extensions;
+
+        $allDomains = array_map(function ($extension) use ($keyword) {
+            return [
+                'domain' => $keyword . '.' . $extension['extension'],
+                'gimmick_price' => $extension['gimmick_price'] ?? null,
+                'price' => $extension['register'] ?? null,
+            ];
+        }, $filteredExtensions);
+
+        $offset = ($page - 1) * $perPage;
+        return [
+            'domains' => array_slice($allDomains, $offset, $perPage),
+            'hasMore' => count($allDomains) > ($offset + $perPage)
+        ];
+    }
+
+    private function loadData()
+    {
+        $data = Storage::disk('public')->get('domains.json');
+        return json_decode($data, true)['data'];
+    }
+
+    private function getExtension($extensions, $extensionName)
+    {
+        foreach ($extensions as $ext) {
+            if ($ext['extension'] === $extensionName) {
+                return $ext;
+            }
+        }
+        return null;
+    }
+
 
     public function checkWhoIs(Request $request)
     {
@@ -131,25 +161,5 @@ class SearchController extends Controller
         }
     }
 
-    private function generateDomain($keyword, $extensions, $page = 1, $perPage = 15)
-    {
-        $allDomains = array_map(function ($extension) use ($keyword) {
-            return [
-                'domain' => $keyword . '.' . $extension['extension'],
-                'price' => $extension['register'],
-            ];
-        }, $extensions);
 
-        $offset = ($page - 1) * $perPage;
-        return [
-            'domains' => array_slice($allDomains, $offset, $perPage),
-            'hasMore' => count($allDomains) > ($offset + $perPage)
-        ];
-    }
-
-    private function loadData()
-    {
-        $data = Storage::disk('public')->get('domains.json');
-        return json_decode($data, true)['data'];
-    }
 }

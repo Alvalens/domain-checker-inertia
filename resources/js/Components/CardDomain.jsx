@@ -1,7 +1,7 @@
-import { CheckCircle, CircleX, Loader2 } from "lucide-react";
+import { CheckCircle, CircleX, Loader2, ShoppingCart } from "lucide-react";
 import React, { useEffect } from "react";
 
-export default function CardDomain({ domain, price, status, checkWhois }) {
+export default function CardDomain({ domain, price, status, checkWhois, gimmick_price }) {
   useEffect(() => {
     if (status === "checking") {
       checkWhois();
@@ -25,9 +25,11 @@ export default function CardDomain({ domain, price, status, checkWhois }) {
   const getStatusText = () => {
     switch (status) {
       case "available":
-        return <span className="text-green-500 text-sm">Tersedia</span>;
+        return null; // Don't show text when available
       case "not_available":
-        return <span className="text-red-500 text-sm">Tidak Tersedia</span>;
+        return (
+          <span className="text-red-500 text-sm">Domain Tidak Tersedia</span>
+        );
       case "error":
         return <span className="text-yellow-500 text-sm">Gagal memeriksa</span>;
       case "checking":
@@ -37,19 +39,46 @@ export default function CardDomain({ domain, price, status, checkWhois }) {
   };
 
   return (
-    <div className="flex flex-row gap-3 justify-between w-full border-b-2 border-gray-300 p-3">
+    <div
+      className={`flex flex-row gap-3 justify-between w-full border-b-2 border-gray-300 p-3 ${
+        status !== "available" ? "bg-orange-50 h-16" : ""
+      }`}
+    >
       <div className="flex flex-row gap-3 items-center">
         {getStatusIcon()}
         <div className="flex flex-col">
           <p className="font-medium">{domain}</p>
-          {getStatusText()}
         </div>
       </div>
-      <div className="flex items-center">
-        {status === "available" && price && (
-          <span className="font-semibold">{price}</span>
-        )}
-      </div>
+
+      {status === "available" ? (
+        <div className="flex items-center gap-5">
+          {gimmick_price && (
+            <span className="line-through text-gray-400 text-sm">
+              {`Rp ${parseInt(spotlight.gimmick_price).toLocaleString(
+                "id-ID"
+              )}`}
+            </span>
+          )}
+          {price && (
+            <div className="font-semibold">
+              {`Rp ${parseInt(price).toLocaleString("id-ID")}`}
+              <span className="text-gray-500 text-sm">/thn</span>
+            </div>
+          )}
+
+          <button className="flex flex-row justify-center items-center bg-orange-500 rounded-lg px-3 py-2 text-white">
+            <ShoppingCart size={24} className="text-white me-3" />
+            Tambah ke keranjang
+          </button>
+        </div>
+      ) : (
+        <div className="flex items-center me-3">
+          <p className="font-bold text-lg">
+            {status !== "available" && getStatusText()}
+          </p>
+        </div>
+      )}
     </div>
   );
 }
