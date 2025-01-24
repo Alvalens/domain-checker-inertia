@@ -106,15 +106,15 @@ export default function Home() {
     <>
       <header className="shadow-md flex flex-col justify-center items-center">
         <Navbar />
-        <div className="flex flex-row min-w-[70%] mb-8 mt-12">
+        <div className="flex flex-col sm:flex-row min-w-[90%] sm:min-w-[70%] mb-8 mt-12">
           <input
             type="text"
-            className="min-w-[85%] border-2 border-gray-400 h-14 px-5 rounded-md"
+            className="flex-grow border-2 border-gray-400 h-14 px-5 rounded-md mb-4 sm:mb-0"
             value={keyword}
             onChange={(e) => setKeyword(e.target.value)}
           />
           <button
-            className="min-w-[15%] ms-3 bg-black rounded-md text-white px-3 py-1 font-semibold"
+            className="sm:ml-3 bg-black rounded-md text-white px-3 py-1 font-semibold"
             onClick={() => fetchDomains(1)}
             {...(loading && { disabled: true })}
           >
@@ -125,12 +125,12 @@ export default function Home() {
       {loading ? (
         <Loader />
       ) : (
-        <div className="min-h-screen mx-auto max-w-7xl py-8">
+        <div className="min-h-screen mx-auto max-w-7xl py-8 px-4 sm:px-8">
           {spotlight && <Splotlight spotlight={spotlight} />}
 
           {/* Suggestions Section */}
-          <div className="flex flex-row mt-5">
-            <div className="min-w-[30%]">
+          <div className="flex flex-col sm:flex-row mt-5">
+            <div className="sm:min-w-[30%] mb-8 sm:mb-0">
               <p className="text-gray-500 mb-8">Filter Berdasarkan Kategori</p>
               <div className="flex flex-col pe-4">
                 <button
@@ -158,7 +158,7 @@ export default function Home() {
                 ))}
               </div>
             </div>
-            <div className="min-w-[70%]">
+            <div className="sm:min-w-[70%]">
               <h1 className="text-2xl font-bold mb-8">Rekomendasi Domain</h1>
               <div className="flex flex-col">
                 {domains.map((domain) => (

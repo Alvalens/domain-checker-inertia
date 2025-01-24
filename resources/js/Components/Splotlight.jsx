@@ -5,8 +5,8 @@ export default function Splotlight({ spotlight }) {
   return (
     <>
       {spotlight.desiredDomain && (
-        <div className="bg-white border-2 rounded-t-lg border-gray-200 p-8 flex justify-between">
-          <div className="flex flex-row gap-3 justify-start">
+        <div className="bg-white border-2 rounded-t-lg border-gray-200 p-4 sm:p-8 flex flex-col sm:flex-row justify-between">
+          <div className="flex flex-col sm:flex-row gap-3 justify-start">
             <div className="gray-300 flex flex-row justify-center items-center">
               <CircleX size={20} className="me-1" />{" "}
               <p>{spotlight.desiredDomain}</p>
@@ -16,15 +16,15 @@ export default function Splotlight({ spotlight }) {
         </div>
       )}
       <div
-        className={`bg-green-50 border-green-200 p-8 flex justify-between ${
+        className={`bg-green-50 border-green-200 p-4 sm:p-8 flex flex-col sm:flex-row justify-between ${
           spotlight.status === "available"
             ? " border-2 rounded-b-lg"
             : "rounded-lg"
         }`}
       >
-        <div className="flex">
+        <div className="flex flex-col sm:flex-row items-start sm:items-center">
           <CheckCircle className="text-green-500" size={32} />
-          <div className="flex flex-col ms-3">
+          <div className="flex flex-col ms-0 sm:ms-3 mt-2 sm:mt-0">
             <div className="text-sm text-green-500">
               {spotlight.hasExtension && !spotlight.desiredDomain
                 ? "Selamat Domain yang kamu cari tersedia!"
@@ -33,8 +33,8 @@ export default function Splotlight({ spotlight }) {
             <div className="text-xl font-bold">{spotlight.domain}</div>
           </div>
         </div>
-        <div className="flex gap-3">
-          <div className="flex flex-row justify-center items-center gap-5">
+        <div className="flex flex-col sm:flex-row gap-3 mt-4 sm:mt-0">
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-5">
             <div
               className={`text-white text-xs ${
                 spotlight.gimmick_price ? "bg-blue-500" : "bg-green-500"

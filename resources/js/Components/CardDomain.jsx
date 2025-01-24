@@ -1,7 +1,13 @@
 import { CheckCircle, CircleX, Loader2, ShoppingCart } from "lucide-react";
 import React, { useEffect } from "react";
 
-export default function CardDomain({ domain, price, status, checkWhois, gimmick_price }) {
+export default function CardDomain({
+  domain,
+  price,
+  status,
+  checkWhois,
+  gimmick_price,
+}) {
   useEffect(() => {
     if (status === "checking") {
       checkWhois();
@@ -25,7 +31,7 @@ export default function CardDomain({ domain, price, status, checkWhois, gimmick_
   const getStatusText = () => {
     switch (status) {
       case "available":
-        return null; // Don't show text when available
+        return null;
       case "not_available":
         return (
           <span className="text-red-500 text-sm">Domain Tidak Tersedia</span>
@@ -40,8 +46,8 @@ export default function CardDomain({ domain, price, status, checkWhois, gimmick_
 
   return (
     <div
-      className={`flex flex-row gap-3 justify-between w-full border-b-2 border-gray-300 p-3 ${
-        status !== "available" ? "bg-orange-50 h-16" : ""
+      className={`flex flex-col sm:flex-row gap-3 justify-between w-full border-b-2 border-gray-300 p-3 ${
+        status !== "available" ? "bg-orange-50 h-auto sm:h-16" : ""
       }`}
     >
       <div className="flex flex-row gap-3 items-center">
@@ -52,12 +58,10 @@ export default function CardDomain({ domain, price, status, checkWhois, gimmick_
       </div>
 
       {status === "available" ? (
-        <div className="flex items-center gap-5">
+        <div className="flex flex-col sm:flex-row items-center gap-5 mt-3 sm:mt-0">
           {gimmick_price && (
             <span className="line-through text-gray-400 text-sm">
-              {`Rp ${parseInt(spotlight.gimmick_price).toLocaleString(
-                "id-ID"
-              )}`}
+              {`Rp ${parseInt(gimmick_price).toLocaleString("id-ID")}`}
             </span>
           )}
           {price && (
