@@ -1,0 +1,1109 @@
+{
+    "success": true,
+    "code": 200,
+    "message": "Get domain extensions success",
+    "data": {
+        "config": {
+            "SEARCH_DOMAIN_BANNER_TOP_DEKSTOP": "",
+            "SEARCH_DOMAIN_BANNER_TOP_MOBILE": "",
+            "SEARCH_DOMAIN_BANNER_TOP_DESKTOP_LINK": "#",
+            "SEARCH_DOMAIN_BANNER_TOP_MOBILE_LINK": "#",
+            "SEARCH_DOMAIN_LIMIT_SHOW_DOMAIN": "15",
+            "SEARCH_DOMAIN_SPOTLIGHT": [
+                ".id",
+                ".com",
+                ".co.id",
+                ".my.id",
+                ".biz.id",
+                ".sch.id",
+                ".net"
+            ]
+        },
+        "categories": [
+            "Popular",
+            "Novelty",
+            "Other",
+            "Technology",
+            "Shopping",
+            "Food and Drink",
+            "Business",
+            "Services",
+            "Arts and Entertainment",
+            "Education",
+            "Leisure and Recreation",
+            "Geographic",
+            "Real Estate",
+            "Sports"
+        ],
+        "extensions": [
+            {
+                "extension": "com",
+                "gimmick_price": null,
+                "group": "sale",
+                "register": ["135000.00"],
+                "transfer": ["199000.00"],
+                "categories": ["Popular"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "net",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["215000.00"],
+                "transfer": ["215000.00"],
+                "categories": ["Popular"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "xyz",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["275000.00"],
+                "transfer": ["299000.00"],
+                "categories": ["Popular", "Novelty"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "id",
+                "gimmick_price": null,
+                "group": "hot",
+                "register": ["210000.00"],
+                "transfer": ["210000.00"],
+                "categories": ["Other"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "org",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["299000.00"],
+                "transfer": ["299000.00"],
+                "categories": ["Popular"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "info",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["250000.00"],
+                "transfer": ["449000.00"],
+                "categories": ["Popular"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "my.id",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["50000.00"],
+                "transfer": ["50000.00"],
+                "categories": ["Other"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "co.id",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["275000.00"],
+                "transfer": ["275000.00"],
+                "categories": ["Other"],
+                "terms_and_conditions": [
+                    "Badan usaha/organisasi/entitas bisnis, atau sejenisnya yang berbadan hukum dan beroperasi di Indonesia.",
+                    "KTP Republik Indonesia",
+                    "SIUP/TDP/AKTA/Surat Izin yang setara",
+                    "Sertifikat Merek (bila ada)",
+                    "[Download Surat Keterkaitan]<https://member.jagoanhosting.com/dl.php?type=d&id=97>"
+                ]
+            },
+            {
+                "extension": "sch.id",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["49000.00"],
+                "transfer": ["49000.00"],
+                "categories": ["Other"],
+                "terms_and_conditions": [
+                    "Lembaga pendidikan yang menyelenggarakan pendidikan seperti TK, SD, SMP, SMU/SMK",
+                    "SK Pendirian Lembaga dari Kementerian atau SKPD terkait.",
+                    "KTP Republik Indonesia",
+                    "Surat Keterangan Kepala Sekolah atau Kepala Lembaga. Draft surat keterangan Kepala Sekolah",
+                    "[Download Surat Kuasa Kepala Sekolah]<https://member.jagoanhosting.com/dl.php?type=d&id=89>",
+                    "[Surat Permohonan Sekolah]<https://member.jagoanhosting.com/dl.php?type=d&id=88>"
+                ]
+            },
+            {
+                "extension": "biz.id",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["100000.00"],
+                "transfer": ["100000.00"],
+                "categories": ["Other"],
+                "terms_and_conditions": [
+                    "Pelaku bisnis yang tidak memiliki badan hukum seperti warung, toko online, dll."
+                ]
+            },
+            {
+                "extension": "ac.id",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["49000.00"],
+                "transfer": ["49000.00"],
+                "categories": ["Other"],
+                "terms_and_conditions": [
+                    "Akademik/perguruan Institusi tinggi Indonesia, min D1",
+                    "KTP Republik Indonesia.",
+                    "SK Pendirian Lembaga dari Kementerian/Lembaga yang berwenang sesuai Peraturan Perundang-Undangan",
+                    "Surat Keterangan Rektor atau Pimpinan Lembaga",
+                    "[Download Surat Permohonan Lembaga Pendidikan]<https://member.jagoanhosting.com/dl.php?type=d&id=92>"
+                ]
+            },
+            {
+                "extension": "or.id",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["49000.00"],
+                "transfer": ["49000.00"],
+                "categories": ["Other"],
+                "terms_and_conditions": [
+                    "Organisasi / yayasan / perkumpulan / komunitas",
+                    "KTP Republik Indonesia.",
+                    "Akta Notaris atau Surat Keterangan dari organisasi yang bersangkutan.[Download Surat Kuasa Pimpinan Organisasi/Lembaga]<https://member.jagoanhosting.com/dl.php?type=d&id=87>"
+                ]
+            },
+            {
+                "extension": "ponpes.id",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["49000.00"],
+                "transfer": ["49000.00"],
+                "categories": ["Other"],
+                "terms_and_conditions": [
+                    "Pondok pesantren",
+                    "Surat keterangan pimpinan pondok pesantren atau pimpinan lembaga tentang prihal pendaftaran nama domain.",
+                    "KTP yang masih berlaku",
+                    " [Download Surat Kuasa Kepala Sekolah]<https://member.jagoanhosting.com/dl.php?type=d&id=89>"
+                ]
+            },
+            {
+                "extension": "web.id",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["49000.00"],
+                "transfer": ["49000.00"],
+                "categories": ["Other"],
+                "terms_and_conditions": ["KTP Republik Indonesia"]
+            },
+            {
+                "extension": "online",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["699000.00"],
+                "transfer": ["685000.00"],
+                "categories": ["Popular", "Technology"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "site",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["399000.00"],
+                "transfer": ["490000.00"],
+                "categories": ["Popular", "Technology"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "live",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["399000.00"],
+                "transfer": ["450000.00"],
+                "categories": ["Other"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "store",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["800000.00"],
+                "transfer": ["800000.00"],
+                "categories": ["Shopping"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "coffee",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["550000.00"],
+                "transfer": ["550000.00"],
+                "categories": ["Food and Drink"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "company",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["275000.00"],
+                "transfer": ["275000.00"],
+                "categories": ["Business"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "app",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["299000.00"],
+                "transfer": ["299000.00"],
+                "categories": ["Technology", "Services"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "today",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["350000.00"],
+                "transfer": ["400000.00"],
+                "categories": ["Novelty"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "blog",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["499000.00"],
+                "transfer": ["540000.00"],
+                "categories": ["Popular", "Technology"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "club",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["350000.00"],
+                "transfer": ["350000.00"],
+                "categories": ["Popular"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "fun",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["650000.00"],
+                "transfer": ["650000.00"],
+                "categories": ["Novelty"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "asia",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["250000.00"],
+                "transfer": ["250000.00"],
+                "categories": ["Other"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "co",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["525000.00"],
+                "transfer": ["525000.00"],
+                "categories": ["Other"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "us",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["199000.00"],
+                "transfer": ["199000.00"],
+                "categories": ["Popular"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "website",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["550000.00"],
+                "transfer": ["550000.00"],
+                "categories": ["Technology"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "tech",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["950000.00"],
+                "transfer": ["950000.00"],
+                "categories": ["Technology"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "name",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["185000.00"],
+                "transfer": ["185000.00"],
+                "categories": ["Other"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "tv",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["640000.00"],
+                "transfer": ["640000.00"],
+                "categories": ["Other"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "cc",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["380000.00"],
+                "transfer": ["380000.00"],
+                "categories": ["Other"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "bz",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["600000.00"],
+                "transfer": ["600000.00"],
+                "categories": ["Other"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "mobi",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["300000.00"],
+                "transfer": ["350000.00"],
+                "categories": ["Popular"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "eu",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["199000.00"],
+                "transfer": ["199000.00"],
+                "categories": ["Popular"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "pro",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["99000.00"],
+                "transfer": ["450000.00"],
+                "categories": ["Other"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "pw",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["350000.00"],
+                "transfer": ["350000.00"],
+                "categories": ["Business"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "photos",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["500000.00"],
+                "transfer": ["500000.00"],
+                "categories": ["Arts and Entertainment"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "center",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["380000.00"],
+                "transfer": ["380000.00"],
+                "categories": ["Business"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "academy",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["625000.00"],
+                "transfer": ["625000.00"],
+                "categories": ["Education"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "solar",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["980000.00"],
+                "transfer": ["980000.00"],
+                "categories": ["Other"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "camera",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["980000.00"],
+                "transfer": ["980000.00"],
+                "categories": ["Other"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "plumbing",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["980000.00"],
+                "transfer": ["980000.00"],
+                "categories": ["Shopping"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "biz",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["300000.00"],
+                "transfer": ["300000.00"],
+                "categories": ["Popular"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "in",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["275000.00"],
+                "transfer": ["275000.00"],
+                "categories": ["Other"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "me",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["599000.00"],
+                "transfer": ["550000.00"],
+                "categories": ["Popular"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "vip",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["299000.00"],
+                "transfer": ["275000.00"],
+                "categories": ["Popular"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "ws",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["495000.00"],
+                "transfer": ["495000.00"],
+                "categories": ["Other"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "news",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["499000.00"],
+                "transfer": ["450000.00"],
+                "categories": ["Arts and Entertainment", "Services"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "shop",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["599000.00"],
+                "transfer": ["670000.00"],
+                "categories": ["Shopping"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "photography",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["499000.00"],
+                "transfer": ["499000.00"],
+                "categories": ["Arts and Entertainment", "Services"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "promo",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["350000.00"],
+                "transfer": ["350000.00"],
+                "categories": ["Shopping"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "shoes",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["980000.00"],
+                "transfer": ["980000.00"],
+                "categories": ["Shopping"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "solutions",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["499000.00"],
+                "transfer": ["380000.00"],
+                "categories": ["Business"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "systems",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["499000.00"],
+                "transfer": ["380000.00"],
+                "categories": ["Technology"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "email",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["499000.00"],
+                "transfer": ["380000.00"],
+                "categories": ["Technology", "Services"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "zone",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["599000.00"],
+                "transfer": ["625000.00"],
+                "categories": ["Novelty"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "kitchen",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["899000.00"],
+                "transfer": ["980000.00"],
+                "categories": ["Food and Drink"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "guru",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["750000.00"],
+                "transfer": ["750000.00"],
+                "categories": ["Shopping"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "camp",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["900000.00"],
+                "transfer": ["900000.00"],
+                "categories": ["Leisure and Recreation"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "bike",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["635000.00"],
+                "transfer": ["635000.00"],
+                "categories": ["Shopping"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "bargains",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["635000.00"],
+                "transfer": ["635000.00"],
+                "categories": ["Shopping"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "glass",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["980000.00"],
+                "transfer": ["980000.00"],
+                "categories": ["Services"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "city",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["399000.00"],
+                "transfer": ["380000.00"],
+                "categories": ["Geographic"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "cleaning",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["980000.00"],
+                "transfer": ["980000.00"],
+                "categories": ["Services"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "dog",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["980000.00"],
+                "transfer": ["980000.00"],
+                "categories": ["Other"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "gmbh",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["635000.00"],
+                "transfer": ["635000.00"],
+                "categories": ["Business"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "ltd",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["399000.00"],
+                "transfer": ["399000.00"],
+                "categories": ["Business"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "mn",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["850000.00"],
+                "transfer": ["850000.00"],
+                "categories": ["Other"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "stream",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["499000.00"],
+                "transfer": ["499000.00"],
+                "categories": ["Other"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "tools",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["640000.00"],
+                "transfer": ["640000.00"],
+                "categories": ["Shopping"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "toys",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["980000.00"],
+                "transfer": ["980000.00"],
+                "categories": ["Shopping"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "support",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["500000.00"],
+                "transfer": ["500000.00"],
+                "categories": ["Services"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "press",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["1000000.00"],
+                "transfer": ["1000000.00"],
+                "categories": ["Business"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "space",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["450000.00"],
+                "transfer": ["450000.00"],
+                "categories": ["Other"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "design",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["899000.00"],
+                "transfer": ["910000.00"],
+                "categories": ["Services"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "events",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["650000.00"],
+                "transfer": ["650000.00"],
+                "categories": [
+                    "Arts and Entertainment",
+                    "Leisure and Recreation"
+                ],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "beauty",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["40000.00"],
+                "transfer": ["250000.00"],
+                "categories": ["Other"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "world",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["650000.00"],
+                "transfer": ["650000.00"],
+                "categories": ["Geographic"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "life",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["610000.00"],
+                "transfer": ["610000.00"],
+                "categories": ["Services"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "cloud",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["399000.00"],
+                "transfer": ["320000.00"],
+                "categories": ["Technology"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "io",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["1100000.00"],
+                "transfer": ["1100000.00"],
+                "categories": ["Popular"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "courses",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["599000.00"],
+                "transfer": ["599000.00"],
+                "categories": ["Education"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "tube",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["499000.00"],
+                "transfer": ["449000.00"],
+                "categories": ["Technology"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "travel",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["2500000.00"],
+                "transfer": ["2500000.00"],
+                "categories": ["Other"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "page",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["249000.00"],
+                "transfer": ["249000.00"],
+                "categories": ["Other"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "ru",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["499000.00"],
+                "transfer": ["499000.00"],
+                "categories": ["Popular"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "trade",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["599000.00"],
+                "transfer": ["599000.00"],
+                "categories": ["Business"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "buzz",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["699000.00"],
+                "transfer": ["699000.00"],
+                "categories": ["Other"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "law",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["1999000.00"],
+                "transfer": ["1999000.00"],
+                "categories": ["Services"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "vc",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["699000.00"],
+                "transfer": ["699000.00"],
+                "categories": ["Other"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "actor",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["699000.00"],
+                "transfer": ["699000.00"],
+                "categories": ["Arts and Entertainment"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "wedding",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["599000.00"],
+                "transfer": ["599000.00"],
+                "categories": ["Other"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "social",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["599000.00"],
+                "transfer": ["599000.00"],
+                "categories": ["Leisure and Recreation"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "host",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["1999000.00"],
+                "transfer": ["1999000.00"],
+                "categories": ["Technology"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "property",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["2999000.00"],
+                "transfer": ["2999000.00"],
+                "categories": ["Real Estate"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "fans",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["1999000.00"],
+                "transfer": ["1999000.00"],
+                "categories": ["Sports"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "studio",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["599000.00"],
+                "transfer": ["599000.00"],
+                "categories": ["Business", "Real Estate"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "game",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["6999000.00"],
+                "transfer": ["6999000.00"],
+                "categories": ["Leisure and Recreation"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "business",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["350000.00"],
+                "transfer": ["350000.00"],
+                "categories": ["Business"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "reviews",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["499000.00"],
+                "transfer": ["499000.00"],
+                "categories": ["Other"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "top",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["99000.00"],
+                "transfer": ["99000.00"],
+                "categories": ["Popular"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "services",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["699000.00"],
+                "transfer": ["699000.00"],
+                "categories": ["Services"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "management",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["450000.00"],
+                "transfer": ["450000.00"],
+                "categories": ["Business", "Services"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "makeup",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["250000.00"],
+                "transfer": ["250000.00"],
+                "categories": ["Other"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "education",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["350000.00"],
+                "transfer": ["350000.00"],
+                "categories": ["Education"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "be",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["200000.00"],
+                "transfer": ["200000.00"],
+                "categories": ["Other"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "uk",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["230000.00"],
+                "transfer": ["230000.00"],
+                "categories": ["Popular", "Geographic"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "ai",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["2000000.00"],
+                "transfer": ["2000000.00"],
+                "categories": ["Other"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "media",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["1500000.00"],
+                "transfer": ["1500000.00"],
+                "categories": ["Technology"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "agency",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["1000000.00"],
+                "transfer": ["1000000.00"],
+                "categories": ["Business"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "gratis",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["800000.00"],
+                "transfer": ["800000.00"],
+                "categories": ["Novelty"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "group",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["1000000.00"],
+                "transfer": ["1000000.00"],
+                "categories": ["Other"],
+                "terms_and_conditions": []
+            },
+            {
+                "extension": "institute",
+                "gimmick_price": null,
+                "group": "",
+                "register": ["1000000.00"],
+                "transfer": ["1000000.00"],
+                "categories": ["Services"],
+                "terms_and_conditions": []
+            }
+        ]
+    }
+}
