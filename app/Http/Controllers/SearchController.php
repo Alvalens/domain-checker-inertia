@@ -21,6 +21,8 @@ class SearchController extends Controller
         $page = $request->input('page', 1);
         $input = $request->input('keyword', '');
         $category = $request->input('category', '');
+        $minPrice = $request->input('minPrice', 0);
+        $maxPrice = $request->input('maxPrice', 7000000);
         $inputDomainParts = explode('.', $input);
         $keyword = $inputDomainParts[0];
         $hasExtension = count($inputDomainParts) > 1;
@@ -67,7 +69,7 @@ class SearchController extends Controller
             }
         }
 
-        $suggestions = $this->generateDomain($keyword, $extensions, $page, $category);
+        $suggestions = $this->generateDomain($keyword, $extensions, $page, $category, $minPrice, $maxPrice);
 
         return response()->json([
             'spotlight' => $spotlightDomain,
@@ -103,7 +105,7 @@ class SearchController extends Controller
         }
     }
 
-    private function generateDomain($keyword, $extensions, $page = 1, $category = '', $perPage = 15)
+    private function generateDomain($keyword, $extensions, $page = 1, $category = '', $minPrice = 0, $maxPrice = 0, $perPage = 15)
     {
         $filteredExtensions = $category
             ? array_filter($extensions, function ($extension) use ($category) {
@@ -118,6 +120,12 @@ class SearchController extends Controller
                 'price' => $extension['register'] ?? null,
             ];
         }, $filteredExtensions);
+
+        $allDomains = array_filter($allDomains, function ($domain) use ($minPrice, $maxPrice) {
+            $price = $domain['price'][0];
+            $price = (int) str_replace('.00', '', $price);
+            return ($price >= $minPrice) && ($price <= $maxPrice);
+        });
 
         $offset = ($page - 1) * $perPage;
         return [

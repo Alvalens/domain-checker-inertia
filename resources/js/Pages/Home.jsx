@@ -5,6 +5,7 @@ import CardDomain from "../Components/CardDomain";
 import axios from "axios";
 import Splotlight from "../Components/Splotlight";
 import Loader from "../Components/Loader";
+import FilterDropdown from "../Components/Filter";
 
 export default function Home() {
   const [keyword, setKeyword] = useState("");
@@ -13,26 +14,30 @@ export default function Home() {
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategotry] = useState("");
   const [whoisBuffer, setWhoisBuffer] = useState({});
-  // Uncomment the error state:
-  const [error, setError] = useState(null);
 
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
   const [loading, setLoading] = useState(false);
   const [loadingMore, setLoadingMore] = useState(false);
 
+  const [minPrice, setMinPrice] = useState(0);
+  const [maxPrice, setMaxPrice] = useState(7000000);
+
   const fetchDomains = async (pageNum = 1) => {
+    if (maxPrice < minPrice) {
+      alert("Minimum price must be less than maximum price");
+      return;
+    }
     if (!keyword.trim()) return;
     if (pageNum === 1) setLoading(true);
-
-    // We can now call setError since it's defined
-    setError(null);
 
     try {
       const response = await axios.post("/search", {
         keyword: keyword.trim(),
         page: pageNum,
         category: selectedCategory,
+        minPrice,
+        maxPrice,
       });
       const data = response.data;
 
@@ -41,7 +46,10 @@ export default function Home() {
 
       if (pageNum === 1) {
         setDomains(
-          data.suggestions.map((domain) => ({ ...domain, status: "checking" }))
+          data.suggestions.map((domain) => ({
+            ...domain,
+            status: "checking",
+          }))
         );
       } else {
         setDomains((prev) => [
@@ -54,12 +62,8 @@ export default function Home() {
       }
 
       setCategories(data.categories);
-
-      data.suggestions.forEach((domain) => {
-        checkWhois(domain.domain);
-      });
+      data.suggestions.forEach((domain) => checkWhois(domain.domain));
     } catch (error) {
-      setError("Failed to fetch domains");
       console.error("Error fetching domains:", error);
     } finally {
       setLoading(false);
@@ -121,7 +125,10 @@ export default function Home() {
         </p>
       ) : (
         <div className="min-h-screen mx-auto max-w-7xl py-8 px-4 sm:px-8">
+          {/* spotlight section */}
           {spotlight && <Splotlight spotlight={spotlight} />}
+
+          {/* category filter */}
           <div className="flex flex-col sm:flex-row mt-5">
             <div className="sm:min-w-[30%] mb-8 sm:mb-0">
               <p className="text-gray-500 mb-8">Filter Berdasarkan Kategori</p>
@@ -152,8 +159,19 @@ export default function Home() {
               </div>
             </div>
 
+            {/* suggestion section */}
             <div className="sm:min-w-[70%]">
-              <h1 className="text-2xl font-bold mb-8">Rekomendasi Domain</h1>
+              <div className="flex flex-row justify-between mb-3">
+                <h1 className="text-2xl font-bold">Rekomendasi Domain</h1>
+                <FilterDropdown
+                  minPrice={minPrice}
+                  maxPrice={maxPrice}
+                  setMinPrice={setMinPrice}
+                  setMaxPrice={setMaxPrice}
+                  fetchDomains={fetchDomains}
+                />
+              </div>
+
               <div className="flex flex-col">
                 {domains.map((domain) => (
                   <CardDomain
