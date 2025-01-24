@@ -9,8 +9,14 @@ use Inertia\Inertia;
 
 class SearchController extends Controller
 {
-    private $whoisurl = 'https://dev-whois.jagoanhosting.com/api/v2/whois';
-    private $whoiskey = 'UAyP7POCcVJ8Pq9Pt1v987';
+    private $whoisurl;
+    private $whoiskey;
+
+    public function __construct()
+    {
+        $this->whoisurl = env('WHOIS_URL', 'https://dev-whois.jagoanhosting.com/api/v2/whois');
+        $this->whoiskey = env('WHOIS_KEY', 'UAyP7POCcVJ8Pq9Pt1v987');
+    }
 
     public function search(Request $request)
     {
