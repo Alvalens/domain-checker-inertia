@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Navbar from "../Components/Navbar";
-import { CheckCircle, ChevronDown, CircleX, ShoppingCart } from "lucide-react";
+import { ChevronDown } from "lucide-react";
 import CardDomain from "../Components/CardDomain";
 import axios from "axios";
 import Splotlight from "../Components/Splotlight";
@@ -13,7 +13,9 @@ export default function Home() {
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategotry] = useState("");
   const [whoisBuffer, setWhoisBuffer] = useState({});
+  // Uncomment the error state:
   const [error, setError] = useState(null);
+
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(true);
   const [loading, setLoading] = useState(false);
@@ -21,10 +23,9 @@ export default function Home() {
 
   const fetchDomains = async (pageNum = 1) => {
     if (!keyword.trim()) return;
+    if (pageNum === 1) setLoading(true);
 
-    if (pageNum === 1) {
-      setLoading(true);
-    }
+    // We can now call setError since it's defined
     setError(null);
 
     try {
@@ -40,10 +41,7 @@ export default function Home() {
 
       if (pageNum === 1) {
         setDomains(
-          data.suggestions.map((domain) => ({
-            ...domain,
-            status: "checking",
-          }))
+          data.suggestions.map((domain) => ({ ...domain, status: "checking" }))
         );
       } else {
         setDomains((prev) => [
@@ -83,22 +81,14 @@ export default function Home() {
 
   const checkWhois = async (domain) => {
     if (whoisBuffer[domain]) return;
-
     try {
       const response = await axios.post("/check-whois", { domain });
       const status = response.data.data.is_available
         ? "available"
         : "not_available";
-
-      setWhoisBuffer((prev) => ({
-        ...prev,
-        [domain]: { status },
-      }));
+      setWhoisBuffer((prev) => ({ ...prev, [domain]: { status } }));
     } catch (error) {
-      setWhoisBuffer((prev) => ({
-        ...prev,
-        [domain]: { status: "error" },
-      }));
+      setWhoisBuffer((prev) => ({ ...prev, [domain]: { status: "error" } }));
     }
   };
 
@@ -122,13 +112,16 @@ export default function Home() {
           </button>
         </div>
       </header>
+
       {loading ? (
         <Loader />
+      ) : !domains.length ? (
+        <p className="text-gray-500 text-center py-10">
+          Mencari domain terbaik untuk bisnismu
+        </p>
       ) : (
         <div className="min-h-screen mx-auto max-w-7xl py-8 px-4 sm:px-8">
           {spotlight && <Splotlight spotlight={spotlight} />}
-
-          {/* Suggestions Section */}
           <div className="flex flex-col sm:flex-row mt-5">
             <div className="sm:min-w-[30%] mb-8 sm:mb-0">
               <p className="text-gray-500 mb-8">Filter Berdasarkan Kategori</p>
@@ -158,6 +151,7 @@ export default function Home() {
                 ))}
               </div>
             </div>
+
             <div className="sm:min-w-[70%]">
               <h1 className="text-2xl font-bold mb-8">Rekomendasi Domain</h1>
               <div className="flex flex-col">
@@ -171,8 +165,7 @@ export default function Home() {
                     checkWhois={() => checkWhois(domain.domain)}
                   />
                 ))}
-
-                {hasMore && (
+                {hasMore && domains.length > 0 && (
                   <button
                     className="mt-3 bg-neutral-900 rounded-xl py-2 w-full text-white flex justify-center items-center font-semibold"
                     onClick={loadMore}
